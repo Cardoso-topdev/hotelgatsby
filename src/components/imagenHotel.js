@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
+import {css} from '@emotion/react';
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
@@ -24,6 +25,7 @@ const TextoImagen = styled.div`
   h1 {
     font-size: 3rem;
     margin: 0;
+    text-align: center;
 
     @media (min-width: 768px) {
       font-size: 5.8rem;

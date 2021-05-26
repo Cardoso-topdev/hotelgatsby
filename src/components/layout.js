@@ -11,6 +11,11 @@ const Layout = ({ children }) => {
           html {
             font-size: 62.5%;
             font-family: "Lato", sans-serif;
+            box-sizing: border-box;
+          }
+
+          *, *:before, *:after {
+            box-sizing: inherit;
           }
 
           body {
