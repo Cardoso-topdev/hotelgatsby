@@ -32,6 +32,7 @@ const IndexPage = () => {
         css={css`
           text-align: center;
           margin-top: 5rem;
+          margin-bottom: 5rem;
           font-size: 3rem;
         `}
       >

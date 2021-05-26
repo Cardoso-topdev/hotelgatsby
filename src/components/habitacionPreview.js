@@ -8,7 +8,7 @@ const Boton = styled(Link)`
   text-align: center;
   margin-top: 2rem;
   padding: 1rem;
-  background-color: rgba(44, 62, 80, 0.85);
+  background-color: rgba(44, 62, 80, .90);
   width: 100%;
   color: #fff;
   display: block;

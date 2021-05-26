@@ -3,8 +3,12 @@ import { Global, css } from "@emotion/react"
 import Header from "./header"
 import Footer from "./footer"
 import Helmet from "react-helmet"
+import useSeo from "../hooks/use-seo"
 
 const Layout = ({ children }) => {
+
+  const seo = useSeo();
+  console.log(seo.fallbackSeo);
   return (
     <>
       <Global
@@ -42,7 +46,8 @@ const Layout = ({ children }) => {
         `}
       />
       <Helmet>
-        <title>Gatsby Hotel</title>
+        <title>{seo.fallbackSeo.title}</title>
+        <meta name="description" content={seo.fallbackSeo.description} />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -56,7 +61,7 @@ const Layout = ({ children }) => {
 
       <Header />
       {children}
-      <Footer />
+      <Footer title={seo.fallbackSeo.title}/>
     </>
   )
 }
