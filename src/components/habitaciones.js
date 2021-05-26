@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { css } from "@emotion/react"
 import Image from "gatsby-image"
+import Layout from "./layout"
 
 export const query = graphql`
   query($slog: String!) {
@@ -19,8 +21,25 @@ export const query = graphql`
 `
 
 const HabitacionTemplate = ({ data }) => {
-  console.log(data.allDatoCmsHabitacion.nodes[0]);
-  return (<h1>Desde habitaciones</h1>);
+  const { titulo, contenido, imagen } = data.allDatoCmsHabitacion.nodes[0]
+  return (
+    <Layout>
+        <main css={css`
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 95%;
+        `}> 
+      <h1
+      css={css`
+      text-align: center;
+      margin-top: 4rem;
+      `}
+      >{titulo}</h1>
+      <p>{contenido}</p>
+      <Image fluid={imagen.fluid}></Image>
+      </main>
+    </Layout>
+  )
 }
 
 export default HabitacionTemplate
